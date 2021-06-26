@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/javierpb275/weather-app/issues"
   },
-  "homepage": "https://github.com/javierpb275/weather-app#readme"
+  "homepage": "https://github.com/javierpb275/weather-app#readme",
+  "dependencies": {
+    "request": "^2.88.2"
+  }
 }

@@ -1,11 +1,3 @@
-console.log('Starting');
+const request = require('request');//make http calls. It supports HTTPS and follows redirects by default.
 
-setTimeout(()=> {
-    console.log('2 second timer')
-}, 2000);
 
-setTimeout(()=> {
-    console.log('0 second timer')
-}, 0);
-
-console.log('Stopping');
