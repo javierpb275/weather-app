@@ -2,21 +2,21 @@
 const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast');
 
-const place = process.argv[2] + ' ' + process.argv[3];
+const commandPlace = process.argv[2] + ' ' + process.argv[3];
 
-const weatherInfo = (place) => {
-    if (!place) {
+const weatherInfo = (address) => {
+    if (!address) {
         console.log('Please provide address');
     } else {
-        geocode(place, (error, geocodeData) => {
+        geocode(address, (error, {place, location} = {}) => {
             if(error) {
                 return console.log(error)
             }
-            forecast(geocodeData.place, (error, forecastData) => {
+            forecast(place, (error, forecastData) => {
                 if(error) {
                     return console.log(error)
                 }
-                console.log(geocodeData.location)
+                console.log(location)
                 console.log(forecastData);
             })
     
@@ -24,4 +24,4 @@ const weatherInfo = (place) => {
     }
 }
 
-weatherInfo(place);
+weatherInfo(commandPlace);
